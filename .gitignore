@@ -1,0 +1,37 @@
+# Java + Maven
+target/
+*.class
+dependency-reduced-pom.xml
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.settings/
+.project
+.classpath
+*.prefs
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Maven wrapper
+.mvn/
+
+# Logs
+*.log
+logs/
+
+# 运行时配置文件（含API Key，用户需自行填写）
+options/api.json
+
+# WorkBuddy
+.workbuddy/
+
+# 构建产物
+dist/

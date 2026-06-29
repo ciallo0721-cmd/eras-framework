@@ -1,0 +1,70 @@
+/* Eras Framework - 样式表 */
+
+/* 全局字体 */
+.root {
+    -fx-font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+}
+
+/******************************
+ * 聊天气泡滚动区域
+ ******************************/
+.chat-scroll-pane {
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+}
+
+.chat-scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+/******************************
+ * 输入框
+ ******************************/
+.text-field {
+    -fx-font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+
+/* 选项对话框 */
+.dialog-pane {
+    -fx-background-color: #f5f5f5;
+}
+
+.dialog-pane .label {
+    -fx-font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+
+/* 按钮 */
+.button {
+    -fx-font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-opacity: 0.85;
+}
+
+/* 下拉框 */
+.combo-box {
+    -fx-font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+
+/* 滚动条透明 */
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 6px;
+}
+
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: rgba(255,255,255,0.2);
+    -fx-background-radius: 3px;
+}
+
+.scroll-pane .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical .increment-button,
+.scroll-pane .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-pref-height: 0;
+}
