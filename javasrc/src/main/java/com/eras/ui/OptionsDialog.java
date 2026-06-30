@@ -37,9 +37,31 @@ public class OptionsDialog extends Dialog<Void> {
     private String currentAiName;
     private String currentUserName;
 
-    public OptionsDialog(List<String> screenImages, List<String> characterImages) {
+    /**
+     * 构造选项对话框
+     * @param screenImages 背景图片列表
+     * @param characterImages 角色图片列表
+     * @param bgPath 当前背景路径
+     * @param charPath 当前角色路径
+     * @param aiColor 当前 AI 文字颜色
+     * @param userColor 当前用户文字颜色
+     * @param aiName 当前 AI 名称
+     * @param userName 当前用户名称
+     */
+    public OptionsDialog(List<String> screenImages, List<String> characterImages,
+                         String bgPath, String charPath,
+                         String aiColor, String userColor,
+                         String aiName, String userName) {
         this.screenImages = screenImages;
         this.characterImages = characterImages;
+
+        // 在 buildUI 之前设置好初始值
+        this.currentBackground = bgPath;
+        this.currentCharacter = charPath;
+        this.currentAiColor = aiColor;
+        this.currentUserColor = userColor;
+        this.currentAiName = aiName;
+        this.currentUserName = userName;
 
         setTitle("选项");
         setHeaderText("二游框架设置");

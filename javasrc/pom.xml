@@ -9,8 +9,8 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>Eras Framework - AI 二游框架</name>
-    <description>一个常见的AI二游框架，支持乙游和Galgame</description>
+    <name>AI 智能体框架-Eras</name>
+    <description>一个基于 JavaFX 的 AI 智能体框架，支持乙游和 Galgame 风格的聊天交互</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

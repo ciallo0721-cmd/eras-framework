@@ -156,15 +156,14 @@ public class MainController {
     private void showOptions() {
         OptionsDialog dialog = new OptionsDialog(
                 Arrays.asList(imageService.getScreenImages()),
-                Arrays.asList(imageService.getCharacterImages())
+                Arrays.asList(imageService.getCharacterImages()),
+                currentBgPath,
+                currentCharPath,
+                aiTextColor,
+                userTextColor,
+                aiName,
+                userName
         );
-
-        dialog.setCurrentBackground(currentBgPath);
-        dialog.setCurrentCharacter(currentCharPath);
-        dialog.setCurrentAiColor(aiTextColor);
-        dialog.setCurrentUserColor(userTextColor);
-        dialog.setCurrentAiName(aiName);
-        dialog.setCurrentUserName(userName);
 
         // 角色更换（保存按钮触发）
         dialog.setOnCharacterChange(path -> {

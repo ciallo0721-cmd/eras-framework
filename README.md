@@ -1,6 +1,6 @@
-# Eras 二游框架
+# AI 智能体框架-Eras
 
-一个基于 JavaFX 的 AI 二游框架，支持乙游和 Galgame 风格的聊天交互。
+一个基于 JavaFX 的 AI 智能体框架，支持乙游和 Galgame 风格的聊天交互。
 
 ## 快速开始
 
@@ -33,7 +33,7 @@
 ## 目录结构
 
 ```
-Eras 二游框架/
+AI 智能体框架-Eras/
 ├── javasrc/          ← Java 源代码
 │   └── src/main/java/com/eras/
 │       ├── ErasApp.java         # 入口
