@@ -56,7 +56,7 @@ public class MainController {
         initServices();
         loadConfigs();
         setupCallbacks();
-        addSystemMessage("Eras 二游框架已启动！在 options/api.json 中配置 API key，或使用演示模式。");
+        addSystemMessage("AI 智能体框架-Eras 已启动！在 options/api.json 中配置 API key，或使用演示模式。");
     }
 
     /**
@@ -397,11 +397,17 @@ public class MainController {
     }
 
     /**
-     * 处理连接命令
+     * 处理连接命令 - 解析并安全校验 AI 输出的指令
      */
     private void processConnectionCommand(String aiReply) {
-        // TODO: 等厂商 API 提供后解析格式：[(名称),mode={模式},{挡位},time={分钟}]
-        // 示例：connectionService.parseCommand(aiReply);
+        if (aiReply == null || aiReply.isEmpty()) return;
+
+        String safeCommand = connectionService.parseCommand(aiReply);
+        if (safeCommand != null) {
+            System.out.println("[MainController] 安全指令已解析: " + safeCommand);
+            // 连接服务开启后，可取消下面注释以实际发送
+            // connectionService.sendCommand(safeCommand);
+        }
     }
 
     /**

@@ -12,7 +12,7 @@ import java.io.File;
 import java.io.InputStream;
 
 /**
- * Eras Framework - AI 二游框架
+ * AI 智能体框架-Eras
  * 主入口
  */
 public class ErasApp extends Application {
@@ -54,7 +54,7 @@ public class ErasApp extends Application {
         }
 
         // 配置舞台
-        primaryStage.setTitle("Eras · 二游框架");
+        primaryStage.setTitle("AI 智能体框架-Eras");
         primaryStage.setScene(scene);
         primaryStage.setMinWidth(400);
         primaryStage.setMinHeight(500);

@@ -64,7 +64,7 @@ public class OptionsDialog extends Dialog<Void> {
         this.currentUserName = userName;
 
         setTitle("选项");
-        setHeaderText("二游框架设置");
+        setHeaderText("Eras 设置");
 
         content = new VBox(10);
         content.setPadding(new Insets(15));
@@ -210,7 +210,7 @@ public class OptionsDialog extends Dialog<Void> {
 
         // 帮助
         addSectionLabel("关于");
-        Label helpLabel = new Label("Eras Framework v1.0.0\nAI 二游框架\n\n" +
+        Label helpLabel = new Label("AI 智能体框架-Eras v1.0.0\n\n" +
                 "· 在 options/api.json 配置 API key\n" +
                 "· 图片放在 picture/ 目录下");
         helpLabel.setStyle("-fx-text-fill: #666666; -fx-font-size: 12px;");

@@ -33,7 +33,7 @@ public class MainWindow extends StackPane {
     private BackgroundLayer backgroundLayer;
     private ScrollPane chatScrollPane;
     private VBox chatContainer;
-    private TextField inputField;
+    private TextArea inputField;
     private Button sendButton;
     private Button imageButton;
     private Button optionButton;
@@ -71,7 +71,7 @@ public class MainWindow extends StackPane {
                 "-fx-padding: 10 5 10 5;"
         );
         chatScrollPane.getStyleClass().add("chat-scroll-pane");
-        chatScrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        chatScrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         chatScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 
         // 自动滚动到底部
@@ -141,7 +141,7 @@ public class MainWindow extends StackPane {
         });
 
         // 应用标题
-        Label titleLabel = new Label("Eras · 二游框架");
+        Label titleLabel = new Label("AI 智能体框架-Eras");
         titleLabel.setStyle("-fx-text-fill: rgba(255,255,255,0.5); -fx-font-size: 14px; -fx-font-weight: bold;");
 
         Region spacer = new Region();
@@ -176,25 +176,30 @@ public class MainWindow extends StackPane {
             if (onImageClick != null) onImageClick.run();
         });
 
-        // 输入框（半透明）
-        inputField = new TextField();
-        inputField.setPromptText("输入文字...");
+        // 输入框（半透明，支持多行）
+        inputField = new TextArea();
+        inputField.setPromptText("输入文字...（Enter换行，Ctrl+Enter发送）");
+        inputField.setPrefRowCount(2);
+        inputField.setWrapText(true);
         inputField.setStyle(
                 "-fx-background-color: rgba(255,255,255,0.06);" +
                 "-fx-text-fill: rgba(255,255,255,0.7);" +
                 "-fx-prompt-text-fill: rgba(255,255,255,0.25);" +
                 "-fx-font-size: 14px;" +
                 "-fx-padding: 8 14;" +
-                "-fx-background-radius: 18;" +
+                "-fx-background-radius: 12;" +
                 "-fx-border-color: rgba(255,255,255,0.05);" +
-                "-fx-border-radius: 18;" +
-                "-fx-font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;"
+                "-fx-border-radius: 12;" +
+                "-fx-font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;" +
+                "-fx-control-inner-background: transparent;" +
+                "-fx-highlight-fill: rgba(91,141,239,0.4);"
         );
         HBox.setHgrow(inputField, Priority.ALWAYS);
 
-        // 快捷键：Enter 发送
+        // 快捷键：Ctrl+Enter 发送，Enter 换行
         inputField.setOnKeyPressed(e -> {
-            if (e.getCode() == KeyCode.ENTER) {
+            if (e.getCode() == KeyCode.ENTER && e.isControlDown()) {
+                e.consume();
                 triggerSend();
             }
         });
@@ -265,7 +270,8 @@ public class MainWindow extends StackPane {
      * 获取输入框文本
      */
     public String getInputText() {
-        return inputField.getText();
+        String text = inputField.getText();
+        return text != null ? text.stripTrailing() : "";
     }
 
     /**

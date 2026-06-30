@@ -26,7 +26,7 @@ public class NsfwConfig {
     public SafetyLimits getSafetyLimits() { return safety_limits; }
 
     public static class SafetyLimits {
-        private int max_gear = 10;
+        private int max_gear = 30;
         private int max_duration = 120;
         private int cooldown_minutes = 5;
 

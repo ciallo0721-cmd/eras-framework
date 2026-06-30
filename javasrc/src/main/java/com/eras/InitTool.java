@@ -90,14 +90,14 @@ public class InitTool {
         writeIfNotExists(basePath + "/options/nsfw.json",
                 "{\n" +
                 "  \"enabled\": false,\n" +
-                "  \"description\": \"郊狼/玩具连接配置。等厂商提供 API 后再配置。\",\n" +
+                "  \"description\": \"郊狼连接配置。基于 DG-LAB 开源协议：https://github.com/dungeonlab-open/dglab-bluetooth-protocol\",\n" +
                 "  \"device_type\": \"\",\n" +
                 "  \"device_id\": \"\",\n" +
                 "  \"api_endpoint\": \"\",\n" +
                 "  \"api_key\": \"\",\n" +
                 "  \"max_duration_minutes\": 120,\n" +
                 "  \"safety_limits\": {\n" +
-                "    \"max_gear\": 10,\n" +
+                "    \"max_gear\": 30,\n" +
                 "    \"max_duration\": 120,\n" +
                 "    \"cooldown_minutes\": 5\n" +
                 "  }\n" +

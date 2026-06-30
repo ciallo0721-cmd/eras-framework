@@ -2,7 +2,8 @@ package com.eras.ui;
 
 import com.eras.model.Message;
 import javafx.geometry.*;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+import javafx.scene.input.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
@@ -52,6 +53,19 @@ public class ChatBubble extends HBox {
                 "-fx-background-radius: " + (isUser ? "12 12 4 12" : "12 12 12 4") + ";" +
                 "-fx-padding: 6 10 6 10;"
         );
+
+        // 右键复制菜单
+        ContextMenu ctxMenu = new ContextMenu();
+        MenuItem copyItem = new MenuItem("复制");
+        copyItem.setOnAction(e -> {
+            Clipboard clipboard = Clipboard.getSystemClipboard();
+            ClipboardContent content = new ClipboardContent();
+            content.putString(message.getContent());
+            clipboard.setContent(content);
+        });
+        ctxMenu.getItems().add(copyItem);
+        textFlow.setOnContextMenuRequested(e -> ctxMenu.show(textFlow, e.getScreenX(), e.getScreenY()));
+        setOnContextMenuRequested(e -> ctxMenu.show(this, e.getScreenX(), e.getScreenY()));
 
         contentBox.getChildren().addAll(nameLabel, textFlow);
 
